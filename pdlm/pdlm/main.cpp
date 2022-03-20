@@ -37,20 +37,20 @@ int main()
 
     while (window.isOpen())
     {
-        float num1 = -g * (2*m1 + m2) * sin(a1),
-              num2 = -m2*g*sin(a1 - 2*a2),
-              num3 = -2*sin(a1-a2)*m2,
-              num4 = a2_v*a2_v*r2 + a1_v*a1_v*r1*cos(a1-a2),
+        float n1 = -g * (2*m1 + m2) * sin(a1),
+              n2 = -m2*g*sin(a1 - 2*a2),
+              n3 = -2*sin(a1-a2)*m2,
+              n4 = a2_v*a2_v*r2 + a1_v*a1_v*r1*cos(a1-a2),
               den = r1 * (2*m1 + m2 - m2*cos(2*a1 - 2*a2)),
              
-              a1_a = (num1 + num2 + num3*num4) / den;
+              a1_a = (n1 + n2 + n3*n4) / den;
 
-        num1 = 2*sin(a1-a2);
-        num2 = a1_v*a1_v*r1*(m1+m2);
-        num3 = g*(m1+m2)*cos(a1);
-        num4 = a2_v*a2_v*r2*m2*cos(a1-a2);
+        n1 = 2*sin(a1-a2);
+        n2 = a1_v*a1_v*r1*(m1+m2);
+        n3 = g*(m1+m2)*cos(a1);
+        n4 = a2_v*a2_v*r2*m2*cos(a1-a2);
         den = r2*(2*m1 + m2 - m2*cos(2*a1 - 2*a2));
-        float a2_a = (num1*(num2+num3+num4)) / den;
+        float a2_a = n1 * (n2+n3+n4) / den;
 
         a1_v += a1_a;
         a2_v += a2_a;
